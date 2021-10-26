@@ -12,6 +12,7 @@
 		"public",
 		"src",
 		"sql",
-		"views"
+		"views",
+		"public/dist"
 	]
 }
