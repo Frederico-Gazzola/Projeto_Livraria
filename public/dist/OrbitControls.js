@@ -1027,7 +1027,11 @@ class OrbitControls extends EventDispatcher {
 		function onMouseWheel( event ) {
 
 			if ( scope.enabled === false || scope.enableZoom === false || ( state !== STATE.NONE && state !== STATE.ROTATE ) ) return;
-
+			if ( ( spherical.radius === scope.minDistance && event.deltaY < 0 ) || 
+			( spherical.radius === scope.maxDistance && event.deltaY > 0 ) ) {
+			   return;
+		   	}
+			
 			event.preventDefault();
 
 			scope.dispatchEvent( _startEvent );
@@ -1036,6 +1040,7 @@ class OrbitControls extends EventDispatcher {
 
 			scope.dispatchEvent( _endEvent );
 
+			
 		}
 
 		function onKeyDown( event ) {

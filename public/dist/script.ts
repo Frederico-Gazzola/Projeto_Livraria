@@ -34,7 +34,7 @@ controls.maxPolarAngle = Math.PI / 2.1
 controls.minPolarAngle = Math.PI / 3
 controls.minAzimuthAngle  = -Math.PI * 6.1
 controls.maxAzimuthAngle = Math.PI * 6.1
-controls.minDistance = 60
+controls.minDistance = 75
 controls.maxDistance = 120
 
 var loader = new GLTFLoader();
