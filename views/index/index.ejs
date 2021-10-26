@@ -1,13 +1,21 @@
-﻿<h1>Eu sou a página index!</h1>
+﻿
+<div class="frame">
+	<div id="editor">
+		Livros te levam à lugares mágicos!
+	</div>
+	<div id="result">
+	  <canvas></canvas>
+	</div>
+</div>
 
+<h1>Eu sou a página index!</h1>
 <p>Oi, <%= usuario %>! 😅</p>
 
 <% for (let contador = 0; contador < quantidadeDeRepeticoes; contador++) { %>
-
-	
 
 	<p>O que é isso?!?!</p>
 
 <% } %>
 
 <p>Tchau, <%= usuario %>!</p>
+<script src="/public/build/three-bundle.js"></script>
