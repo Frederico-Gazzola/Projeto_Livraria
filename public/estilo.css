@@ -37,6 +37,7 @@ canvas {
     text-align: center;
     font-family: Marola;
     font-size: 80px;
+    background-color: black;
 }
 #titulo >*{
     font-size: 80px;
