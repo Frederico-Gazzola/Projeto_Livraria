@@ -1,25 +1,31 @@
-﻿<div id="titulo">
-	<h1>
-		A Cova Do Goblin
-	</h1>
-</div>
-<div class="frame">
-	<div id="editor">
-		Livros te levam à lugares mágicos!
+	<div id="titulo">
+		<h1>
+			Seja bem-vindo à Caverna do Goblin
+		</h1>
+		<p>
+			Aqui na caverna nós mostramos um conjunto de trabalhos literários diferentes a cada semana.
+			<br>
+			Tanto aqueles que já leram estas obras ou os que sejam motivados a lê-las primeira vez poderão deixar Reviews de
+			cada livro a serem compartilhadas com todos os usuários da Caverna.
+		</p>
 	</div>
-	<div id="result">
-	  <canvas></canvas>
+	<div class="frame">
+		<div id="editor">
+			Livros te levam à lugares mágicos!
+		</div>
+		<div id="result">
+			<canvas></canvas>
+		</div>
 	</div>
-</div>
 
-<h1>Eu sou a página index!</h1>
-<p>Oi, <%= usuario %>! 😅</p>
+	<h1>Eu sou a página index!</h1>
+	<p>Oi, <%= usuario %>! 😅</p>
 
-<% for (let contador = 0; contador < quantidadeDeRepeticoes; contador++) { %>
+	<% for (let contador=0; contador < quantidadeDeRepeticoes; contador++) { %>
 
-	<p>O que é isso?!?!</p>
+		<p>O que é isso?!?!</p>
 
-<% } %>
+		<% } %>
 
-<p>Tchau, <%= usuario %>!</p>
-<script src="/public/build/three-bundle.js"></script>
+	<p>Tchau, <%= usuario %>!</p>
+	<script src="/public/build/three-bundle.js"></script>
