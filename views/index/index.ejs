@@ -1,16 +1,19 @@
-	<div id="titulo">
-		<h1>
-			Seja bem-vindo à Caverna do Goblin
-		</h1>
+	<div id="top">
+		<div id="titulo">
+			<h1>
+				Seja bem-vindo(a) à Caverna do Goblin
+			</h1>
+		</div>
+		<div id="intro">
+			<p>
+				Aqui na caverna nós mostramos um conjunto de trabalhos literários diferentes a cada semana.
+				<br>
+				Tanto aqueles que já leram estas obras ou os que sejam motivados a lê-las primeira vez poderão deixar Reviews de
+				cada livro a serem compartilhadas com todos os usuários da Caverna.
+			</p>
+		</div>
 	</div>
-	<div id="intro">
-		<p>
-			Aqui na caverna nós mostramos um conjunto de trabalhos literários diferentes a cada semana.
-			<br>
-			Tanto aqueles que já leram estas obras ou os que sejam motivados a lê-las primeira vez poderão deixar Reviews de
-			cada livro a serem compartilhadas com todos os usuários da Caverna.
-		</p>
-	</div>
+	
 	<div class="frame">
 		<div id="editor">
 			Livros te levam à lugares mágicos!
@@ -19,15 +22,10 @@
 			<canvas></canvas>
 		</div>
 	</div>
-
-	<h1>Eu sou a página index!</h1>
-	<p>Oi, <%= usuario %>! 😅</p>
-
-	<% for (let contador=0; contador < quantidadeDeRepeticoes; contador++) { %>
-
-		<p>O que é isso?!?!</p>
-
-		<% } %>
-
-	<p>Tchau, <%= usuario %>!</p>
+	<div id="resto">
+		<div id="lista-books">
+			<h3>O Nome Do Vento</h3>
+			<img src="https://m.media-amazon.com/images/I/51bRkcp1sLL.jpg" alt="capa">
+		</div>
+	</div>
 	<script src="/public/build/three-bundle.js"></script>
