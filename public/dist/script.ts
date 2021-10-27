@@ -34,8 +34,8 @@ controls.maxPolarAngle = Math.PI / 2.1
 controls.minPolarAngle = Math.PI / 3
 controls.minAzimuthAngle  = -Math.PI * 6.1
 controls.maxAzimuthAngle = Math.PI * 6.1
-controls.minDistance = 75
-controls.maxDistance = 120
+controls.minDistance = 40
+controls.maxDistance = 100
 
 var loader = new GLTFLoader();
 let mixer: THREE.AnimationMixer

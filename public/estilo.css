@@ -10,6 +10,7 @@ body {
     display: flex;
     width: 100vw;
     height: 60vh;
+    margin-bottom: 30px;
 }
 #editor {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -27,10 +28,8 @@ body {
 canvas { 
     width: 75%;
     height: 75%;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    padding: auto;
+    margin: auto;
     display: block;
 }
 #top {
@@ -42,9 +41,8 @@ canvas {
     text-align: center;
 }
 #result {
+    display: flex;
     flex: 1 1 60%;
-    padding-right: 30px;
-    align-items: center;
 }
 #titulo {
     font-family: Marola;
@@ -55,7 +53,8 @@ canvas {
     background: -webkit-linear-gradient(rgb(31, 50, 221), rgb(164, 3, 228));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+    margin-top: 50px;
 }
 #intro {
     font-family: sans-serif;
@@ -64,22 +63,43 @@ canvas {
     font-size: 25px;
 }
 #navbar {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    height: 50px;
+    width: 100%;
     background-color: black;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#navbar > img {
+    margin-left: 15px;
+    margin-right: 10px;
+    width: 40px;
+}
+#navbar > a {
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    padding-bottom: 15px;
+    margin: 15px;
 }
 #resto {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: rgb(124, 207, 116);
+    background-color: rgb(154, 206, 149);
     color: black;
 }
-#resto > div > img {
-    border-style: solid;
-    border-color: black;
+#resto > div > div > img {
+    width: 220px;
 }
 #lista-books {
     margin: 20px;
 } 
 h3 {
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 700;
 }
