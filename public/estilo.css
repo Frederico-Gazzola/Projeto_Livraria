@@ -3,23 +3,22 @@ body {
     background-color: black;
 }
 @font-face{
-    font-family: Marola;
-    src: url("MAROLA__.TTF");
+    font-family: sea;
+    src: url("Seagram\ tfb.ttf");
 }
 .frame { 
     display: flex;
-    width: 100vw;
     height: 60vh;
     margin-bottom: 30px;
 }
 #editor {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: sea;
     flex: 1 1 40%;
     margin-left: 30px;
     margin-right: 30px;
     color: rgb(89, 236, 109);
     font-size: 55px;
-    font-weight: 600;
+    font-weight: 300;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -35,7 +34,7 @@ canvas {
 #top {
     background-color: black;
     padding-top: 70px;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
     padding-left: 45px;
     padding-right: 45px;
     text-align: center;
@@ -44,62 +43,87 @@ canvas {
     display: flex;
     flex: 1 1 60%;
 }
-#titulo {
-    font-family: Marola;
-    font-size: 80px;
+h1 {
+    font-family: sea;
+    
+}
+h2 {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
 }
 #titulo >*{
     font-size: 80px;
     background: -webkit-linear-gradient(rgb(31, 50, 221), rgb(164, 3, 228));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding-bottom: 60px;
-    margin-top: 50px;
+    padding-bottom: 30px;  
 }
 #intro {
     font-family: sans-serif;
+    text-align: center;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 #intro >*{
     font-size: 25px;
 }
-#navbar {
+.navbar {
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
     position: fixed;
-    height: 50px;
     width: 100%;
     background-color: black;
-    padding-left: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
-#navbar > img {
+.navbar > img {
     margin-left: 15px;
     margin-right: 10px;
-    width: 40px;
+    width: 30px;
 }
-#navbar > a {
+.navbar > a {
     font-family: sans-serif;
     text-align: center;
     color: white;
     font-size: 15px;
     padding: 10px;
     padding-bottom: 15px;
-    margin: 15px;
 }
 #resto {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: rgb(154, 206, 149);
+    background-color: rgb(50, 112, 37);
     color: black;
-}
-#resto > div > div > img {
-    width: 220px;
 }
 #lista-books {
     margin: 20px;
-} 
+}
 h3 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 25px;
     font-weight: 700;
+}
+#new_user {
+    flex-grow: 1;
+    justify-self: right;
+    text-align: right;
+    font-weight: bold;
+    color:rgb(235, 72, 172);
+}
+.book-da-semana {
+    display: inline-flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    width: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+.img-book{
+    display: inline-table;
+}
+.img-book > img {
+    width: 220px;
 }

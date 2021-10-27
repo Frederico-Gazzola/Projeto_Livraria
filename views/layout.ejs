@@ -18,22 +18,37 @@
 	<link rel="stylesheet" type="text/css" href="/public/estilo.css" />
 </head>
 <body>
-
-	<div id="navbar">
+	<!--if(!user){-->
+	<div class="navbar">
 		<img src="https://e7.pngegg.com/pngimages/665/515/png-clipart-demonoid-bittorrent-tracker-torrentz-invitation-system-icloud-icon-torrentz-torrentfreak.png" alt="">
 
 		<a href="/">Home</a>
 		
-		<a href="/teste">Teste</a>
+		<a href="/livros">Biblioteca</a>
 		
-		<a href="/produtos">Produtos</a>
+		<a>Sobre nós</a>
+
+		<a href="/new_account" id="new_user">Criar Conta</a>
+	</div>
+	<!--}-->
+
+	<!--else{
+		<div id="navbar">
+		<img src="https://e7.pngegg.com/pngimages/665/515/png-clipart-demonoid-bittorrent-tracker-torrentz-invitation-system-icloud-icon-torrentz-torrentfreak.png" alt="">
+
+		<a href="/">Home</a>
+		
+		<a href="/livros">Biblioteca</a>
+		
+		<a href="/add_review">Adicionar Review</a>
 		
 		<a>Sobre nós</a>
 	</div>
-
+	}-->
+	
 	<%- body %>
 
-	<div>
+	<div id="footer">
 		Copyright &copy; 2021 Empresa.
 	</div>
 
