@@ -2,9 +2,73 @@ body {
     color: whitesmoke;
     background-color: black;
 }
+
 @font-face{
     font-family: sea;
-    src: url("Seagram\ tfb.ttf");
+    src: url("fonts/Seagram\ tfb.ttf");
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    position: fixed;
+    width: 100%;
+    background-color: black;
+}
+.navbar > img {
+    margin-left: 15px;
+    margin-right: 10px;
+    width: 30px;
+}
+.navbar > a {
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+h1 {
+    font-family: sea;
+    
+}
+h2 {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+#titulo >*{
+    font-size: 80px;
+    background: -webkit-linear-gradient(rgb(31, 50, 221), rgb(164, 3, 228));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 30px;  
+}
+#intro {
+    font-family: sans-serif;
+    text-align: center;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+#intro >*{
+    font-size: 25px;
+}
+#new_user {
+    flex-grow: 1;
+    justify-self: right;
+    text-align: right;
+    font-weight: bold;
+    color:rgb(235, 72, 172);
+}
+#top {
+    background-color: black;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    padding-left: 45px;
+    padding-right: 45px;
+    text-align: center;
 }
 .frame { 
     display: flex;
@@ -31,103 +95,24 @@ canvas {
     margin: auto;
     display: block;
 }
-#top {
-    background-color: black;
-    padding-top: 70px;
-    padding-bottom: 40px;
-    padding-left: 45px;
-    padding-right: 45px;
-    text-align: center;
-}
 #result {
     display: flex;
     flex: 1 1 60%;
 }
-h1 {
-    font-family: sea;
-    
-}
-h2 {
-    text-align: center;
-    font-family: sans-serif;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 20px;
-}
-#titulo >*{
-    font-size: 80px;
-    background: -webkit-linear-gradient(rgb(31, 50, 221), rgb(164, 3, 228));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding-bottom: 30px;  
-}
-#intro {
-    font-family: sans-serif;
-    text-align: center;
-    padding-right: 40px;
-    padding-left: 40px;
-}
-#intro >*{
-    font-size: 25px;
-}
-.navbar {
-    display: flex;
-    justify-content: flex-start;
-    position: fixed;
-    width: 100%;
-    background-color: black;
-}
-.navbar > img {
-    margin-left: 15px;
-    margin-right: 10px;
-    width: 30px;
-}
-.navbar > a {
-    font-family: sans-serif;
-    text-align: center;
-    color: white;
-    font-size: 15px;
-    padding: 10px;
-    padding-bottom: 15px;
-}
-#resto {
-    background: url('gt7-01.jpg') repeat;
+.resto {
+    background: url('texture/gt7-01.jpg') repeat;
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: rgb(50, 112, 37);
     color: black;
-}
-#lista-books {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 h3 {
     text-align: center;
     font-size: 25px;
     font-weight: 500;
     text-overflow: clip;
-    width: 220px;
+    width: auto;
 }
-#new_user {
-    flex-grow: 1;
-    justify-self: right;
-    text-align: right;
-    font-weight: bold;
-    color:rgb(235, 72, 172);
-}
-.book-da-semana {
-    display: inline-flex;
-    flex-direction: column;
-    flex-shrink: 1;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-}
-.img-book{
-    display: inline-table;
-}
-.img-book > img {
-    width: 220px;
-}
+
+
+

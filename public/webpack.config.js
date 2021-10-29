@@ -5,7 +5,7 @@ module.exports = {
   mode: "development",
   devtool: "inline-source-map",
   entry: {
-    main: "./public/dist/script.ts",
+    main: "./public/dist/fantasy_book.ts",
   },
   output: {
     path: path.resolve(__dirname, './build'),
