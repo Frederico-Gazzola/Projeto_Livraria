@@ -107,10 +107,11 @@ canvas {
     background-color: rgb(50, 112, 37);
     color: black;
 }
-.title_2 {
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 100px;
     font-weight: 500;
-    color: whitesmoke;
+    color: rgb(89, 236, 109);
     padding-top: 50px;
     padding-bottom: 30px;
 }
