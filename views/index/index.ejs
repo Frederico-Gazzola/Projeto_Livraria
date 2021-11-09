@@ -32,36 +32,19 @@
 			<h2>Livros da Semana</h2>
 		</div>
 		<div class="row pt-5 pb-5 justify-content-center">
+			<% for (let contador = 0; contador < livros_semana.length; contador++) { %>
 			<div class="col cardp">
 				<div class="card">
 					<img src="public/book_cover/book1.jpg" class="card-img-top" alt="book cover">
 					<div class="card-body">
-						<h5 class="card-title">Nome Do Filme</h5>
-						<p class="card-text">Rapido resumo do filme</p>
+						<h5 class="card-title"><%= livros_semana[contador].titulo %></h5>
+						<p class="card-text"><%= livros_semana[contador].autor %></p>
+						<p class="card-text"><%= livros_semana[contador].descricao %></p>
 						<a href="#" class="btn btn-primary">Reviews</a>
 					</div>
 				</div>
 			</div>
-			<div class="col cardp">
-				<div class="card">
-					<img src="public/book_cover/book1.jpg" class="card-img-top" alt="book cover">
-					<div class="card-body">
-						<h5 class="card-title">Nome Do Filme</h5>
-						<p class="card-text">Rapido resumo do filme</p>
-						<a href="#" class="btn btn-primary">Reviews</a>
-					</div>
-				</div>
-			</div>
-			<div class="col cardp">
-				<div class="card">
-					<img src="public/book_cover/book1.jpg" class="card-img-top" alt="book cover">
-					<div class="card-body">
-						<h5 class="card-title">Nome Do Filme</h5>
-						<p class="card-text">Rapido resumo do filme</p>
-						<a href="#" class="btn btn-primary">Ver reviews</a>
-					</div>
-				</div>
-			</div>
+			<% } %>
 		</div>
 	</div>
 </div>

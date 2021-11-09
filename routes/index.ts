@@ -2,47 +2,30 @@
 
 class IndexRoute {
 	public async index(req: app.Request, res: app.Response) {
-		let nomeDoUsuarioQueVeioDoBanco = "Rafael";
+		let livros_semana: any[];
+
+		await app.sql.connect(async (sql) => {
+			livros_semana = await sql.query("SELECT titulo, autor, descricao FROM book LIMIT 3");
+		});
 
 		let opcoes = {
-			usuario: nomeDoUsuarioQueVeioDoBanco,
-			quantidadeDeRepeticoes: 5
+			livros_semana: livros_semana
 		};
 
 		res.render("index/index", opcoes);
 	}
 
-	public async teste(req: app.Request, res: app.Response) {
-		res.render("index/teste");
-	}
+	public async biblioteca(req: app.Request, res: app.Response) {
+		let books: any[];
 
-	public async produtos(req: app.Request, res: app.Response) {
-		let produtoA = {
-			id: 1,
-			nome: "Produto A",
-			valor: 25
-		};
-
-		let produtoB = {
-			id: 2,
-			nome: "Produto B",
-			valor: 15
-		};
-
-		let produtoC = {
-			id: 3,
-			nome: "Produto C",
-			valor: 100
-		};
-
-		let produtosVindosDoBanco = [ produtoA, produtoB, produtoC ];
+		await app.sql.connect(async (sql) => {
+			books = await sql.query("SELECT titulo, autor, descricao FROM book");
+		});
 
 		let opcoes = {
-			titulo: "Listagem de Produtos",
-			produtos: produtosVindosDoBanco
+			books: books
 		};
-
-		res.render("index/produtos", opcoes);
+		res.render("index/biblioteca", opcoes);
 	}
 }
 

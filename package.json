@@ -1,17 +1,18 @@
 {
-  "name": "projeto",
+  "name": "projeto_livraria",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "webpack --config public/webpack.config.js",
     "start": "node src/app"
   },
-  "description": "projeto",
+  "description": "projeto_livraria",
   "author": {
-    "name": "projeto"
+    "name": "projeto_livraria"
   },
   "main": "src/app.js",
   "dependencies": {
+    "mysql": "^2.18.1",
     "teem": "0.0.21"
   },
   "devDependencies": {

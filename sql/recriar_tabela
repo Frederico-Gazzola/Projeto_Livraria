@@ -1,0 +1,4 @@
+mysql -u root -p
+root
+source sql/script.sql
+source sql/seed.sql

@@ -1,2 +1,3 @@
 # Projeto_Livraria
-Projeto de um site de resenhas e reviews de livros feitas por usuários.
+
+Um site de resenhas e reviews de livros para amantes de literatura. 

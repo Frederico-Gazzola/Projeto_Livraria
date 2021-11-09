@@ -1,0 +1,21 @@
+<h1>Sou a página de biblioteca!</h1>
+
+<p>Listagem de livros (<%= livro.length %> livros no total)</p>
+
+<% for (let contador = 0; contador < livro.length; contador++) { %>
+
+	<h2>
+		<%= livro[contador].titulo %>
+	</h2>
+
+	<p>
+		Titulo: <%= livro[contador].autor %>
+	</p>
+
+	<p>
+		Descricao: R$ <%= livro[contador].descricao %>
+	</p>
+
+	<hr />
+
+<% } %>
