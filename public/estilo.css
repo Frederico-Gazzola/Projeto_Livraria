@@ -8,6 +8,11 @@ body {
     src: url("fonts/Seagram\ tfb.ttf");
 }
 
+@font-face{
+    font-family: handlee;
+    src: url("fonts/Handlee/Handlee-Regular.ttf");
+}
+
 .navbar {
     display: flex;
     justify-content: flex-start;
@@ -48,7 +53,7 @@ h2 {
     padding-bottom: 30px;  
 }
 #intro {
-    font-family: sans-serif;
+    font-family: handlee;
     text-align: center;
     padding-right: 60px;
     padding-left: 60px;
