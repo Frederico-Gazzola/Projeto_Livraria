@@ -10,7 +10,7 @@ body {
 
 @font-face{
     font-family: handlee;
-    src: url("fonts/Handlee/Handlee-Regular.ttf");
+    src: url("fonts/Handlee/Handlee-Regular\.ttf");
 }
 
 .navbar {
