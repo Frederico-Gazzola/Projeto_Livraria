@@ -17,10 +17,7 @@
 	</p>
 </div>
 
-<div class="frame">
-	<div id="editor">
-		Os livros te levam à lugares mágicos!
-	</div>
+<div class="frame pt-3">
 	<div id="result">
 		<canvas id="fbook"></canvas>
 	</div>
@@ -28,18 +25,18 @@
 
 <div class="resto">
 	<div class="container-fluid">
-		<div class="title_2 row justify-content-center pl-5">
+		<div class="row justify-content-center">
 			<h2>Livros da Semana</h2>
 		</div>
-		<div class="row pt-5 pb-5 justify-content-center">
+		<div class="row px-5 mx-5 justify-content-center">
 			<% for (let contador = 0; contador < livros_semana.length; contador++) { %>
-			<div class="col cardp">
-				<div class="card">
-					<img src="public/book_cover/book1.jpg" class="card-img-top" alt="book cover">
+			<div class="col">
+				<div class="card p-2 ml-2 mr-2">
+					<img src="public/book_cover/<%= livros_semana[contador].foto %>" class="card-img-top" alt="book cover">
 					<div class="card-body">
 						<h5 class="card-title"><%= livros_semana[contador].titulo %></h5>
 						<p class="card-text"><%= livros_semana[contador].autor %></p>
-						<p class="card-text"><%= livros_semana[contador].descricao %></p>
+						<p class="card-text desc"><%= livros_semana[contador].descricao %></p>
 						<a href="#" class="btn btn-primary">Reviews</a>
 					</div>
 				</div>
@@ -50,3 +47,17 @@
 </div>
 
 <script src="/public/build/three-bundle.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+	$(function(){
+	  $(".desc").each(function(i){
+		len=$(this).text().length;
+		if(len>280)
+		{
+		  $(this).text($(this).text().substr(0,275)+'...');
+		}
+	  });
+	});
+// ]]>
+</script>
+	

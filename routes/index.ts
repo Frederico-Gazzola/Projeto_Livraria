@@ -5,7 +5,7 @@ class IndexRoute {
 		let livros_semana: any[];
 
 		await app.sql.connect(async (sql) => {
-			livros_semana = await sql.query("SELECT titulo, autor, descricao FROM book LIMIT 3");
+			livros_semana = await sql.query("SELECT titulo, autor, descricao, foto FROM book LIMIT 3");
 		});
 
 		let opcoes = {
@@ -19,7 +19,7 @@ class IndexRoute {
 		let books: any[];
 
 		await app.sql.connect(async (sql) => {
-			books = await sql.query("SELECT titulo, autor, descricao FROM book");
+			books = await sql.query("SELECT titulo, autor, descricao, foto FROM book");
 		});
 
 		let opcoes = {

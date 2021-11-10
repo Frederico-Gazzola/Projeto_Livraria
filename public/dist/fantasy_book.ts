@@ -5,7 +5,7 @@ import { GLTFLoader } from './GLTFLoader.js';
 const scene = new THREE.Scene()
 
 const light = new THREE.PointLight()
-light.position.set(0.8, 1.4, 1.0)
+light.position.set(10, 10, 1.0)
 scene.add(light)
 
 const clock = new THREE.Clock();
@@ -26,6 +26,14 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(0, 0, 0)
 camera.lookAt(0,0,0)
 
+const geometry = new THREE.CircleGeometry( 10, 32 );
+const texture = new THREE.TextureLoader().load( 'public/logo/logo_goblin.png' );
+const material = new THREE.MeshBasicMaterial( { map: texture, transparent: true} );
+material.side = THREE.DoubleSide;
+const circle = new THREE.Mesh( geometry, material );
+scene.add( circle );
+circle.position.set(-3,0,0)
+
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.enableDamping = true
 controls.target.set(0, 0, 0)
@@ -33,8 +41,13 @@ controls.maxPolarAngle = Math.PI / 2.1
 controls.minPolarAngle = Math.PI / 3
 controls.minAzimuthAngle  = -Math.PI * 6.1
 controls.maxAzimuthAngle = Math.PI * 6.1
-controls.minDistance = 40
-controls.maxDistance = 100
+// let minD = 40
+// controls.minDistance = minD
+// let maxD = 100
+// controls.maxDistance = maxD
+controls.minDistance = 60
+controls.maxDistance = 60
+controls.enableZoom = false
 
 var loader = new GLTFLoader();
 let mixer: THREE.AnimationMixer
@@ -43,7 +56,6 @@ loader.load( 'public/dist/models/scene.gltf', function ( gltf ) {
 	mixer.clipAction((gltf as any).animations[0]).play()
 	scene.add( gltf.scene );
 });
-
 
 function resizeCanvasToDisplaySize() {
     const canvas = renderer.domElement;
@@ -70,7 +82,9 @@ function onWindowResize() {
 
 function animate() {
     resizeCanvasToDisplaySize();
+
     requestAnimationFrame(animate)
+
     if (mixer) {
         mixer.update(clock.getDelta())  
     }
@@ -84,4 +98,3 @@ function render() {
 }
 
 animate()
-
