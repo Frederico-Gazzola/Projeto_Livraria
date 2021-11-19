@@ -29,35 +29,53 @@
 			<h2>Livros da Semana</h2>
 		</div>
 		<div class="row px-5 mx-5 justify-content-center">
-			<% for (let contador = 0; contador < livros_semana.length; contador++) { %>
-			<div class="col">
-				<div class="card p-2 ml-2 mr-2">
-					<img src="public/book_cover/<%= livros_semana[contador].foto %>" class="card-img-top" alt="book cover">
-					<div class="card-body">
-						<h5 class="card-title"><%= livros_semana[contador].titulo %></h5>
-						<p class="card-text"><%= livros_semana[contador].autor %></p>
-						<p class="card-text desc"><%= livros_semana[contador].descricao %></p>
-						<a href="#" class="btn btn-primary">Reviews</a>
+			<% for (let contador=0; contador < livros_semana.length; contador++) { %>
+				<div class="col">
+					<div class="card p-2 ml-2 mr-2">
+						<img src="public/book_cover/<%= livros_semana[contador].foto %>" class="card-img-top"
+							alt="book cover">
+						<div class="card-body">
+							<h5 class="card-title">
+								<%= livros_semana[contador].titulo %>
+							</h5>
+							<p class="card-text">
+								<%= livros_semana[contador].autor %>
+							</p>
+							<p class="card-text desc">
+								<%= livros_semana[contador].descricao %>
+							</p>
+							<a href="#" class="btn btn-primary">Reviews</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<% } %>
+				<% } %>
 		</div>
 	</div>
 </div>
 
+<div class="about">
+	<h3>Sobre nós</h3>
+
+	<p>
+		Nós somos um grupo de amantes de literatura, especialmente do gênero de fantasia. Nós decidimos criar essa
+		plataforma para compartilhar nossos
+		interesses com outros de opinião similar, assim como qualquer um que esteja curioso para aprender mais sobre o
+		gênero.
+	</p>
+
+
+</div>
+
 <script src="/public/build/three-bundle.js"></script>
 <script type="text/javascript">
-// <![CDATA[
-	$(function(){
-	  $(".desc").each(function(i){
-		len=$(this).text().length;
-		if(len>280)
-		{
-		  $(this).text($(this).text().substr(0,275)+'...');
-		}
-	  });
+	// <![CDATA[
+	$(function () {
+		$(".desc").each(function (i) {
+			len = $(this).text().length;
+			if (len > 280) {
+				$(this).text($(this).text().substr(0, 275) + '...');
+			}
+		});
 	});
 // ]]>
 </script>
-	
