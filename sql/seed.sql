@@ -11,6 +11,9 @@ INSERT INTO book (titulo, autor, descricao, foto)
             values ("As Cronicas de Narnia", "C. S. Lewis", "Em Nárnia, o inverno é eterno nunca há Natal. Centauros, faunos, gigantes e outros animais falantes vivem infelizes com a maldição, declarada na ausência do Leão Aslam, que agora retorna ao reino ao lado das crianças. Juntos, todos irão lutar para acabar com a profecia de Jadis e liberar o local do domínio do mal." , "book2.jpg");
 INSERT INTO book (titulo, autor, descricao, foto) 
             values ("O Ladrão de Raios", "Rick Riordan", "Um artefato precioso foi roubado do Monte Olimpo e Percy é o principal suspeito. Para restaurar a paz, ele e seus amigos – jovens heróis modernos – terão de fazer mais do que capturar o verdadeiro ladrão: precisam elucidar uma traição mais ameaçadora que fúria dos deuses.", "book3.jpg");
+INSERT INTO book (titulo, autor, descricao, foto) 
+            values ("O Espadachim de Carvão", "Affonso Solano", "A história começa com Adapak, um jovem de 19 ciclos, lutando contra alguns guandirianos que estavam atrás dele tentando matá-lo, aparentemente sem motivo. Mas utilizando Os Círculos Tibaul e as espadas gêmeas, Igi e Sumi, feitas de osso de anbärr, ele consegue se livrar da perseguição rapidamente, mas antes de ir embora o macho líder fala a misteriosa palavra 'Ikibu', que deixa o jovem Adapak muito intrigado.", "book4.jpg");
+
 
 INSERT INTO user (nome, email, senha) values ("user", "user@gmail.com", "123");
 INSERT INTO user (nome, email, senha) values ("leon", "leon@gmail.com", "123");
