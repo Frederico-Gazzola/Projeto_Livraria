@@ -1,21 +1,34 @@
-<h1>Sou a página de biblioteca!</h1>
+<div class="container">
+	<div class="mt-5" id="biblioteca-sub-container">
+		<div class="mb-5">
+			<h1 class="text-light">Sou a página de biblioteca!</h1>
+			<h3 class="text-light">Aqui você irá conhecer todos os livros disponíveis</h3>
+		</div>
+		<p class="text-light">Listagem de livros <span class="font-italic">(<%= books.length %> livros no total)</span>
+		</p>
 
-<p>Listagem de livros (<%= livro.length %> livros no total)</p>
-
-<% for (let contador = 0; contador < livro.length; contador++) { %>
-
-	<h2>
-		<%= livro[contador].titulo %>
-	</h2>
-
-	<p>
-		Titulo: <%= livro[contador].autor %>
-	</p>
-
-	<p>
-		Descricao: R$ <%= livro[contador].descricao %>
-	</p>
-
-	<hr />
-
-<% } %>
+		<div class="d-flex flex-wrap card-wrapper">
+			<% for (let contador=0; contador < books.length; contador++) {
+				
+				%>
+				<div class="card px-5 py-4 mx-2 my-3 bg-light" style="width: 300px; height: 400px;">
+					<div class="title" style="height: 120px;">
+						<h3 style="text-align: center;">
+							<%= books[contador].titulo %>
+						</h3>
+					</div>
+					<div class="book-photo-wrapper">
+						<img src="../../public/book_cover/<%= books[contador].foto%>">
+					</div>
+					<p><span style="font-style: italic;font-weight: bold;">Autor</span>
+						<%= books[contador].autor %>
+					</p>
+					<p class="truncate"><span style="font-style: italic;font-weight: bold;">Descrição</span>
+						<%= books[contador].descricao %> ...
+					</p>
+					<a href="/detalhes/">Detalhes</a>
+				</div>
+				<% } %>
+		</div>
+	</div>
+</div>
