@@ -110,7 +110,7 @@ h2 {
     align-items: center;
 }
 
-canvas {
+.canvas {
     width: 100%;
     height: 100%;
     margin-top: auto;
@@ -226,7 +226,7 @@ h2 {
     }
 }
 
-#about {
+.about {
     background-color: black;
-    font: handlee;
+    font-family: handlee;
 }
