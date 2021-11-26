@@ -16,4 +16,4 @@ INSERT INTO user (nome, email, senha) values ("user", "user@gmail.com", "123");
 INSERT INTO user (nome, email, senha) values ("leon", "leon@gmail.com", "123");
 
 INSERT INTO review (nota, descricao, book_id, user_id) values (3, "Livro Interessante", 1, 1);
-INSERT INTO review (nota, descricao, book_id, user_id) values (5, "Livro Interessante", 2, 2);
+INSERT INTO review (nota, descricao, book_id, user_id) values (5, "Muito Bom!", 2, 2);

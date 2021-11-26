@@ -62,7 +62,7 @@ h2 {
 #intro >*{
     font-size: 25px;
 }
-#new_user {
+#add_review {
     flex-grow: 1;
     justify-self: right;
     text-align: right;
@@ -120,4 +120,3 @@ h2 {
     padding-top: 50px;
     padding-bottom: 30px;
 }
-

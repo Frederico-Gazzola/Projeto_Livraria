@@ -32,7 +32,7 @@
 			<% for (let contador = 0; contador < livros_semana.length; contador++) { %>
 			<div class="col">
 				<div class="card p-2 ml-2 mr-2">
-					<img src="public/book_cover/<%= livros_semana[contador].foto %>" class="card-img-top" alt="book cover">
+					<img src="public/book_cover/<%= livros_semana[contador].foto %>" class="card-img-top card-fit" alt="book cover">
 					<div class="card-body">
 						<h5 class="card-title"><%= livros_semana[contador].titulo %></h5>
 						<p class="card-text"><%= livros_semana[contador].autor %></p>
