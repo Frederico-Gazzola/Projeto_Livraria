@@ -19,6 +19,7 @@
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
 	<script type="text/javascript"
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/3ff5994085.js" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" type="text/css" href="/public/estilo.css" />
 </head>
@@ -27,16 +28,14 @@
 	<!--if(!user){-->
 	<div class="navbar">
 		<img src="/public/logo/logo_goblin.png" alt="">
-
-		<a href="/">Home</a>
-
+		<a href="/" >Home</a>
 		<a href="/biblioteca">Biblioteca</a>
-
-		<img class="lupa" src="../public/icons/lupa_pesquisa.png" alt="">
-		<div class="search-box">
-			<input type="text" placeholder="Search..">
+		<span class="nav-item-right mr-3">
+			<i class="fas fa-search"></i>
+		</span>
+		<div class="form-group">	
+    		<input type="search" class="form-control" id="search-box" aria-describedby="search books" placeholder="Pesquisa Por Título">
 		</div>
-
 		<a href="/new_account" id="new_user">Criar Conta</a>
 	</div>
 	<!--}-->
@@ -56,11 +55,6 @@
 	}-->
 
 	<%- body %>
-
-		<div id="footer">
-			Copyright &copy; 2021 Empresa.
-		</div>
-
 </body>
 
 </html>

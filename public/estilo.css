@@ -1,6 +1,6 @@
 body {
     color: whitesmoke;
-    background: url(texture/gt7-01.jpg) no-repeat center center fixed;
+    background: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -19,11 +19,18 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: left;
+    align-items: center;
     position: fixed;
     width: 100%;
     background-color: black;
     z-index: 1000;
+}
+
+.nav-item-right {
+    margin-left: auto;
+    justify-self: end;
+    align-self: center;
 }
 
 .navbar>img {
@@ -75,11 +82,14 @@ h2 {
 }
 
 #new_user {
-    flex-grow: 1;
-    justify-self: right;
+    justify-self: flex-end;
     text-align: right;
     font-weight: bold;
     color: rgb(235, 72, 172);
+}
+
+.form-group {
+    justify-self: flex-end;
 }
 
 #top {
@@ -167,22 +177,6 @@ h2 {
     text-overflow: ellipsis;
 }
 
-.search-box {
-    max-width: 300px;
-}
-
-.search-box input[type=text] {
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-    position: absolute;
-    right: 6em;
-    top: 0.3em;
-    text-indent: 20px;
-}
-
 .navbar img.lupa {
     position: absolute;
     right: 19.4em;
@@ -191,9 +185,6 @@ h2 {
     z-index: 1000;
     max-width: 20px;
 }
-
-
-
 
 #footer {
     position: fixed;
@@ -228,5 +219,5 @@ h2 {
 
 .about {
     background-color: black;
-    font-family: handlee;
+    font-family: Arial, Helvetica, sans-serif;
 }
