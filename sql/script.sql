@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `livraria`.`book` (
   `titulo` VARCHAR(45) NOT NULL,
   `autor` VARCHAR(45) NOT NULL,
   `descricao` VARCHAR(2000) NOT NULL,
-  `foto` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`book_id`));
 
 CREATE TABLE IF NOT EXISTS `livraria`.`review` (

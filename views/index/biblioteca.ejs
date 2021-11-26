@@ -8,9 +8,7 @@
 		</p>
 
 		<div class="d-flex flex-wrap card-wrapper">
-			<% for (let contador=0; contador < books.length; contador++) {
-				
-				%>
+			<% for (let contador=0; contador < books.length; contador++) { %>
 				<div class="card px-5 py-4 mx-2 my-3 bg-light" style="width: 300px; height: 400px;">
 					<div class="title" style="height: 120px;">
 						<h3 style="text-align: center;">
@@ -18,7 +16,7 @@
 						</h3>
 					</div>
 					<div class="book-photo-wrapper">
-						<img src="../../public/book_cover/<%= books[contador].foto%>">
+						<img src="/public/book_cover/book<%= books[contador].id %>.jpg">
 					</div>
 					<p><span style="font-style: italic;font-weight: bold;">Autor</span>
 						<%= books[contador].autor %>

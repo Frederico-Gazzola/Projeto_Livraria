@@ -1,0 +1,19 @@
+<div class="container" style="padding-top: 10%;">
+  <h1 style="text-align: center;">Adicione Sua Review</h1>
+  <form style="margin-left: 30%; margin-right: 30%;">
+    <div class="form-group">
+      <label for="selecionar_livro">Selecione Um Livro</label>
+      <select class="form-control">
+        <% for (let contador=0; contador < books.length; contador++) { %>
+        <option><%= books[contador].titulo %></option value="">
+        <% } %>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="inputDescricao">O que voce achou desse livro?</label>
+      <input type="text" class="form-control" id="inputDescricao" aria-describedby="descricaoReview" placeholder="Coloque sua Review" rows="3">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
