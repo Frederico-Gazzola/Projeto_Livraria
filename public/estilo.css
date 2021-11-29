@@ -61,7 +61,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-#titulo>* {
+#titulo-g >* {
     font-size: 80px;
     background: -webkit-linear-gradient(rgb(31, 50, 221), rgb(164, 3, 228));
     -webkit-background-clip: text;
@@ -149,11 +149,12 @@ h2 {
 }
 
 .book-photo-wrapper {
-    width: 100px;
+    height: 400px;
+    margin: auto;
 }
 
 .book-photo-wrapper>img {
-    max-width: 100%;
+    max-height: 100%;
 }
 
 .card-wrapper {

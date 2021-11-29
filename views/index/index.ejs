@@ -2,7 +2,7 @@
 	<h1>
 		Seja bem-vinde à
 	</h1>
-	<div id="titulo">
+	<div id="titulo-g">
 		<h1>
 			Caverna do Goblin
 		</h1>
@@ -32,8 +32,10 @@
 			<% for (let contador=0; contador < livros_semana.length; contador++) { %>
 				<div class="col">
 					<div class="card p-2 ml-2 mr-2">
-						<img src="public/book_cover/<%= livros_semana[contador].foto %>" class="card-img-top"
+						<div class="book-photo-wrapper">
+							<img src="public/book_cover/<%= livros_semana[contador].foto %>" class="card-img-top"
 							alt="book cover">
+						</div>
 						<div class="card-body">
 							<h5 class="card-title">
 								<%= livros_semana[contador].titulo %>
@@ -53,7 +55,7 @@
 	</div>
 </div>
 
-<div class="about">
+<div class="about m-5">
 	<h3>Sobre nós</h3>
 
 	<p>
@@ -79,7 +81,7 @@
 		$(".desc").each(function (i) {
 			len = $(this).text().length;
 			if (len > 280) {
-				$(this).text($(this).text().substr(0, 275) + '...');
+				$(this).text($(this).text().substr(0, 260) + '...');
 			}
 		});
 	});

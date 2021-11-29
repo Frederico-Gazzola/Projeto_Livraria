@@ -1,0 +1,23 @@
+<div class="container" style="padding-top: 10%;">
+  <h1 style="text-align: center;">Adicione um Livro</h1>
+  <form style="margin-left: 30%; margin-right: 30%;" action="/criarLivro" method="post">
+    <div class="form-group">
+      <label for="titulo">Titulo</label>
+      <input type="text" class="form-control" id="titulo" placeholder="Titulo do Livro" name="titulo">
+    </div>
+    <div class="form-group">
+      <label for="autor">Autor</label>
+      <input type="text" class="form-control" id="autor" placeholder="Autor do Livro" name="autor">
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descricao</label>
+      <input type="text" class="form-control" id="descricao" placeholder="Descricao do Livro" name="descricao">
+    </div>
+    <div class="form-group">
+      <label for="foto">Foto</label>
+      <input type="file" class="form-control-file" id="foto" name="foto">
+    </div>
+    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+  </form>
+</div>
+

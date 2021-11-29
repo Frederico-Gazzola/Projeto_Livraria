@@ -2,14 +2,14 @@
 
 class IndexRoute {
 	public async index(req: app.Request, res: app.Response) {
-		let reviews_semana: any[];
+		let livros_semana: any[];
 
 		await app.sql.connect(async (sql) => {
-			reviews_semana = await sql.query("SELECT titulo, autor, descricao, foto FROM book LIMIT 3");
+			livros_semana = await sql.query("SELECT titulo, autor, descricao, foto FROM book LIMIT 3");
 		});
 
 		let opcoes = {
-			reviews_semana: reviews_semana
+			livros_semana: livros_semana
 		};
 
 		res.render("index/index", opcoes);
@@ -32,43 +32,97 @@ class IndexRoute {
 		let books: any[];
 
 		await app.sql.connect(async (sql) => {
-			books = await sql.query("SELECT id, titulo FROM book");
+			books = await sql.query("SELECT book_id, titulo FROM book");
 		});
 
 		let opcoes = {
-			books: books
+			books: books,
+			resultado: 2
 		};
 		res.render("index/add_review", opcoes);
+	}
+
+	public async add_livro(req: app.Request, res: app.Response) {
+		res.render("index/add_livro");
+	}
+
+	@app.http.post()
+	public async criarLivro(req: app.Request, res: app.Response) {
+		let livro = req.body;
+		if (!livro) {
+			res.status(400);
+			res.json("Dados inválidos");
+			return;
+		}
+		if (!livro.titulo) {
+			res.status(400);
+			res.json("Precisa de Titulo");
+			return;
+		}
+		if (!livro.autor) {
+			res.status(400);
+			res.json("Precisa de Autor");
+			return;
+		}
+		if (!livro.descricao) {
+			res.status(400);
+			res.json("Precisa de Descricao");
+			return;
+		}
+		if (!livro.foto) {
+			res.status(400);
+			res.json("Foto Invalida");
+			return;
+		}
+
+		await app.sql.connect(async (sql) => {
+			await sql.query("INSERT INTO book (titulo, autor, descricao) VALUES (?, ?, ?, ?)", [livro.titulo, livro.autor, livro.descricao]);
+		});
+		res.render("index/add_livro");
 	}
 
 	@app.http.post()
 	public async criarReview(req: app.Request, res: app.Response) {
 		let review = req.body;
+		let resultado = 0;
+		let books;
+		await app.sql.connect(async (sql) => {
+			books = await sql.query("SELECT book_id, titulo FROM book");
+		});
+
+		let opcoes = {
+			books: books,
+			resultado: resultado
+		};
+
 		if (!review) {
-			res.status(400);
-			res.json("Dados inválidos");
+			res.render("index/add_review", opcoes);
 			return;
 		}
 		if (!review.nota) {
-			res.status(400);
-			res.json("Titulo inválido");
+			res.render("index/add_review", opcoes);
 			return;
 		}
 		if (!review.descricao) {
-			res.status(400);
-			res.json("Ano inválido");
+			res.render("index/add_review", opcoes);
 			return;
 		}
-		if (!review.book_id) {
-			res.status(400);
-			res.json("Ano inválido");
+		if (!review.titulo) {
+			res.render("index/add_review", opcoes);
 			return;
 		}
+		review.nota = parseInt(review.nota)
+		await app.sql.connect(async (sql) => {
+			review['book_id'] = await sql.query("SELECT book_id FROM book WHERE titulo = ? ", review.titulo);
+		});
 
 		await app.sql.connect(async (sql) => {
-			await sql.query("INSERT INTO review (nota, descricao, user_id, book_id) VALUES (?, ?, ?, ?)", [review.nota, review.descricao, 1, review.book_id]);
+			await sql.query("INSERT INTO review (nota, descricao, user_id, book_id) VALUES (?, ?, ?, ?)", [review.nota, review.descricao, 1, review.book_id[0].book_id]);
 		});
-		res.json(true);
+		
+		opcoes[resultado] = 1;
+
+		res.render("index/add_review", opcoes);
 	}
 }
 
