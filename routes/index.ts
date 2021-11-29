@@ -120,8 +120,7 @@ class IndexRoute {
 			await sql.query("INSERT INTO review (nota, descricao, user_id, book_id) VALUES (?, ?, ?, ?)", [review.nota, review.descricao, 1, review.book_id[0].book_id]);
 		});
 		
-		opcoes[resultado] = 1;
-
+		opcoes.resultado = 1;
 		res.render("index/add_review", opcoes);
 	}
 }
