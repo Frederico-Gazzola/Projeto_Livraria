@@ -33,7 +33,7 @@
 				<div class="col">
 					<div class="card p-2 ml-2 mr-2">
 						<div class="book-photo-wrapper">
-							<img src="public/book_cover/<%= livros_semana[contador].foto %>" class="card-img-top"
+							<img src="/public/book_cover/book<%= livros_semana[contador].book_id %>.jpg" class="card-img-top"
 							alt="book cover">
 						</div>
 						<div class="card-body">
@@ -46,7 +46,7 @@
 							<p class="card-text desc">
 								<%= livros_semana[contador].descricao %>
 							</p>
-							<a href="#" class="btn btn-primary">Reviews</a>
+							<a href="/review?book_id=<%= livros_semana[contador].book_id %>" class="btn btn-primary">Reviews</a>
 						</div>
 					</div>
 				</div>

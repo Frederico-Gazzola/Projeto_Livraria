@@ -1,0 +1,38 @@
+<div class="container" style="padding-top: 10%;">
+    <% if (book == undefined) { %>
+        <h1>Livro nao existe</h1>
+    <% } else { %>
+        <div class="row"">
+            <div class="col">
+                <div class="book-photo-wrapper">
+                    <img src="/public/book_cover/book<%= book.book_id %>.jpg">
+                </div>
+                <h1 style="padding: 1%;">
+                    <%= book.titulo %>
+                </h1>
+            </div>
+            <div class="col">
+                <p style="padding: 1%;">
+                    Descricao: 
+                    <%= book.descricao %>
+                </p>
+            </div>
+            <div class="col">
+                <h2 style="padding: 1%;">
+                    Reviews
+                </h2>
+                <div>
+                    <% for (let contador=0; contador < review.length; contador++) { %>
+                        <h3> <%= review[contador].nome %> </h3>
+                        <p> <%= review[contador].descricao %> </p>
+                        <p> <%= review[contador].nota %> </p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col">
+
+        </div>
+    <% } %>
+</div>

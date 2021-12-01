@@ -1,23 +1,31 @@
 <div class="container" style="padding-top: 10%;">
+  <% if (criado == 1) { %>
+    <div class="alert alert-success" role="alert">
+      Livro Criado!
+    </div>
+  <% } if (criado == 0) { %>
+    <div class="alert alert-warning" role="alert">
+      Livro Não Criado! Verifique Os Dados.
+    </div>
+  <% } %> 
   <h1 style="text-align: center;">Adicione um Livro</h1>
-  <form style="margin-left: 30%; margin-right: 30%;" action="/criarLivro" method="post">
+  <form style="margin-left: 30%; margin-right: 30%;" action="/criarLivro" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="titulo">Titulo</label>
-      <input type="text" class="form-control" id="titulo" placeholder="Titulo do Livro" name="titulo">
+      <input type="text" class="form-control" id="titulo" placeholder="Titulo do Livro" name="titulo" maxlength="45" required>
     </div>
     <div class="form-group">
       <label for="autor">Autor</label>
-      <input type="text" class="form-control" id="autor" placeholder="Autor do Livro" name="autor">
+      <input type="text" class="form-control" id="autor" placeholder="Autor do Livro" name="autor" maxlength="45" required>
     </div>
     <div class="form-group">
       <label for="descricao">Descricao</label>
-      <input type="text" class="form-control" id="descricao" placeholder="Descricao do Livro" name="descricao">
+      <textarea class="form-control" id="descricao" placeholder="Descricao do Livro" name="descricao" required rows="8" style="resize: vertical;"></textarea>
     </div>
     <div class="form-group">
-      <label for="foto">Foto</label>
-      <input type="file" class="form-control-file" id="foto" name="foto">
+      <label for="foto">Capa do Livro</label>
+      <input id="foto" name="foto" type="file" class="form-control-file" required>
     </div>
-    <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+    <button type="submit" class="btn btn-primary" id="submit">Criar Livro</button>
   </form>
 </div>
-

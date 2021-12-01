@@ -153,6 +153,16 @@ h2 {
     margin: auto;
 }
 
+.book-photo-wrapper-biblio {
+    width: 150px;
+    margin: auto;
+}
+
+.book-photo-wrapper-biblio>img {
+    max-width: 100%;
+}
+
+
 .book-photo-wrapper>img {
     max-height: 100%;
 }

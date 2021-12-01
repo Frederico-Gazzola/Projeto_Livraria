@@ -5,7 +5,7 @@ class IndexRoute {
 		let livros_semana: any[];
 
 		await app.sql.connect(async (sql) => {
-			livros_semana = await sql.query("SELECT titulo, autor, descricao, foto FROM book LIMIT 3");
+			livros_semana = await sql.query("SELECT book_id, titulo, autor, descricao FROM book ORDER BY book_id DESC LIMIT 3");
 		});
 
 		let opcoes = {
@@ -19,13 +19,66 @@ class IndexRoute {
 		let books: any[];
 
 		await app.sql.connect(async (sql) => {
-			books = await sql.query("SELECT titulo, autor, descricao, foto FROM book");
+			books = await sql.query("SELECT book_id, titulo, autor, descricao FROM book ORDER BY book_id DESC");
 		});
 
 		let opcoes = {
 			books: books
 		};
 		res.render("index/biblioteca", opcoes);
+	}
+
+	public async add_livro(req: app.Request, res: app.Response) {
+		let opcoes = {
+			criado: 2
+		};
+		res.render("index/add_livro", opcoes);
+	}
+
+	@app.http.post()
+	@app.route.formData()
+	public async criarLivro(req: app.Request, res: app.Response) {
+		let livro = req.body;
+		let opcoes = {};
+
+		if (!livro) {
+			opcoes['criado'] = 0;
+			res.render("index/add_livro", opcoes);
+			return;
+		}
+		if (!livro.titulo) {
+			opcoes['criado'] = 0;
+			res.render("index/add_livro", opcoes);
+			return;
+		}
+		if (!livro.autor) {
+			opcoes['criado'] = 0;
+			res.render("index/add_livro", opcoes);
+			return;
+		}
+		if (!livro.descricao) {
+			opcoes['criado'] = 0;
+			res.render("index/add_livro", opcoes);
+			return;
+		}
+		if (!req.uploadedFiles || !req.uploadedFiles.foto || req.uploadedFiles.foto.size > 1024 * 1024) {
+			opcoes['criado'] = 0;
+			res.render("index/add_livro", opcoes);
+			return;
+		}
+
+		await app.sql.connect(async (sql) => {
+			await sql.beginTransaction();
+
+			await sql.query("INSERT INTO book (titulo, autor, descricao) VALUES (?, ?, ?)", [livro.titulo, livro.autor, livro.descricao]);
+
+			let id = await sql.scalar("SELECT last_insert_id()");
+			await app.fileSystem.saveUploadedFile("public/book_cover/book" + id + ".jpg", req.uploadedFiles.foto);
+
+			await sql.commit();
+		});
+		opcoes['criado'] = 1;
+		res.render("index/add_livro", opcoes);
 	}
 
 	public async add_review(req: app.Request, res: app.Response) {
@@ -42,43 +95,23 @@ class IndexRoute {
 		res.render("index/add_review", opcoes);
 	}
 
-	public async add_livro(req: app.Request, res: app.Response) {
-		res.render("index/add_livro");
-	}
-
-	@app.http.post()
-	public async criarLivro(req: app.Request, res: app.Response) {
-		let livro = req.body;
-		if (!livro) {
-			res.status(400);
-			res.json("Dados inválidos");
-			return;
-		}
-		if (!livro.titulo) {
-			res.status(400);
-			res.json("Precisa de Titulo");
-			return;
-		}
-		if (!livro.autor) {
-			res.status(400);
-			res.json("Precisa de Autor");
-			return;
-		}
-		if (!livro.descricao) {
-			res.status(400);
-			res.json("Precisa de Descricao");
-			return;
-		}
-		if (!livro.foto) {
-			res.status(400);
-			res.json("Foto Invalida");
-			return;
-		}
+	public async review(req: app.Request, res: app.Response) {
+		let book: any[];
+		let review: any[];
+		let book_id = req.query.book_id;
 
 		await app.sql.connect(async (sql) => {
-			await sql.query("INSERT INTO book (titulo, autor, descricao) VALUES (?, ?, ?, ?)", [livro.titulo, livro.autor, livro.descricao]);
+			book = await sql.query("SELECT book_id, titulo, autor, descricao FROM book WHERE book_id = ?", book_id);
+			review = await sql.query("SELECT nota, review.descricao as descricao, user.nome FROM book " +
+									"JOIN review ON book.book_id = review.book_id JOIN user ON review.user_id = user.user_id " +
+									 "WHERE book.book_id = ?", book_id);
 		});
-		res.render("index/add_livro");
+
+		let opcoes = {
+			book: book[0],
+			review: review
+		};
+		res.render("index/review", opcoes);
 	}
 
 	@app.http.post()
@@ -86,6 +119,7 @@ class IndexRoute {
 		let review = req.body;
 		let resultado = 0;
 		let books;
+
 		await app.sql.connect(async (sql) => {
 			books = await sql.query("SELECT book_id, titulo FROM book");
 		});

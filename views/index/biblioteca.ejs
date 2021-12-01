@@ -9,13 +9,13 @@
 
 		<div class="d-flex flex-wrap card-wrapper">
 			<% for (let contador=0; contador < books.length; contador++) { %>
-				<div class="card px-5 py-4 mx-2 my-3 bg-light" style="width: 300px; height: 400px;">
+				<div class="card px-5 py-4 mx-2 my-3 bg-light" style="width: 300px; height: auto;">
 					<div class="title" style="height: 120px;">
 						<h3 style="text-align: center;">
 							<%= books[contador].titulo %>
 						</h3>
 					</div>
-					<div class="book-photo-wrapper">
+					<div class="book-photo-wrapper-biblio">
 						<img src="/public/book_cover/book<%= books[contador].book_id %>.jpg">
 					</div>
 					<p><span style="font-style: italic;font-weight: bold;">Autor</span>
@@ -24,7 +24,7 @@
 					<p class="truncate"><span style="font-style: italic;font-weight: bold;">Descrição</span>
 						<%= books[contador].descricao %> ...
 					</p>
-					<a href="/detalhes/">Detalhes</a>
+					<a href="/review?book_id=<%= books[contador].book_id %>">Ver Reviews</a>
 				</div>
 				<% } %>
 		</div>
