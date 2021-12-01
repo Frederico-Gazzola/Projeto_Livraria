@@ -61,7 +61,7 @@ class IndexRoute {
 			res.render("index/add_livro", opcoes);
 			return;
 		}
-		if (!req.uploadedFiles || !req.uploadedFiles.foto || req.uploadedFiles.foto.size > 1024 * 1024) {
+		if (!req.uploadedFiles || !req.uploadedFiles.foto) {  //req.uploadedFiles.foto.size > 1024 * 1024
 			opcoes['criado'] = 0;
 			res.render("index/add_livro", opcoes);
 			return;
