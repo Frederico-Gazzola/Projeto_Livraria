@@ -12,22 +12,36 @@
                 </h1>
             </div>
             <div class="col">
+                <h3>Descricao</h3>
                 <p style="padding: 1%;">
-                    Descricao: 
                     <%= book.descricao %>
                 </p>
             </div>
             <div class="col">
-                <h2 style="padding: 1%;">
-                    Reviews
-                </h2>
-                <div>
-                    <% for (let contador=0; contador < review.length; contador++) { %>
-                        <h3> <%= review[contador].nome %> </h3>
-                        <p> <%= review[contador].descricao %> </p>
-                        <p> <%= review[contador].nota %> </p>
-                    <% } %>
-                </div>
+                <% if (review.length != 0) { %>
+                    <h2 style="padding: 1%;">
+                        Reviews
+                    </h2>
+                    <div>
+                        <% for (let contador=0; contador < review.length; contador++) { %>
+                            <div class="row">
+                                <div style="display: flex; flex-direction: column; align-items: center;">
+                                    <h3> <%= review[contador].nome %> </h3>
+                                    <p> <%= review[contador].descricao %> </p>
+                                </div>
+                                <div>
+                                    <% for (let estr=0; estr < review[contador].nota; estr++) { %>
+                                        <span class="material-icons">star_rate</span>
+                                    <% } %>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } else { %>
+                    <h2 style="padding: 1%;">
+                        Ainda Não Há Reviews
+                    </h2>
+                <% } %>
             </div>
         </div>
         
